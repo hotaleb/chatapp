@@ -90,3 +90,94 @@ docker ps
 ```bash
 docker compose -f docker-compose.dev.yml up -d
 ```
+
+### Base ArCh
+
+```
+src/
+├── application/
+│   ├── services/
+│   │   ├── AutoReplyService.ts
+│   │   ├── CacheService.ts
+│   │   ├── ConversationService.ts
+│   │   ├── ErrorHandlingService.ts
+│   │   ├── HistoryService.ts
+│   │   ├── MessageQueueService.ts
+│   │   ├── MessageQueryService.ts
+│   │   ├── MessageSearchService.ts
+│   │   ├── MessageService.ts
+│   │   ├── NotificationService.ts
+│   │   ├── PresenceService.ts
+│   │   ├── UserGuideService.ts
+│   │   ├── UserSearchService.ts
+│   │   ├── UserService.ts
+│   │   └── WebSocketService.ts
+│   └── dto/
+│       ├── ConversationDTO.ts
+│       ├── MessageDTO.ts
+│       ├── NotificationMessageDTO.ts
+│       ├── UserDTO.ts
+│       └── UserSessionDTO.ts
+├── domain/
+│   ├── entities/
+│   │   ├── Conversation.ts
+│   │   ├── Message.ts
+│   │   ├── NotificationMessage.ts
+│   │   ├── User.ts
+│   │   ├── UserSession.ts
+│   │   └── UserStatus.ts
+│   ├── interfaces/
+│   │   ├── ICacheService.ts
+│   │   ├── IConversationRepository.ts
+│   │   ├── IConversationService.ts
+│   │   ├── IErrorHandlingService.ts
+│   │   ├── IHistoryService.ts
+│   │   ├── IMessageQueueService.ts
+│   │   ├── IMessageRepository.ts
+│   │   ├── IMessageService.ts
+│   │   ├── INotificationService.ts
+│   │   ├── IPresenceRepository.ts
+│   │   ├── ISearchService.ts
+│   │   ├── IUserRepository.ts
+│   │   ├── IUserService.ts
+│   │   ├── IUserSessionRepository.ts
+│   │   └── IWebSocketService.ts
+│   └── exceptions/
+│       ├── ConversationNotFoundException.ts
+│       ├── CustomError.ts
+│       ├── MessageNotFoundException.ts
+│       └── UserNotFoundException.ts
+├── infrastructure/
+│   ├── cache/
+│   │   ├── ConversationCache.ts
+│   │   ├── SearchCache.ts
+│   │   └── StatusCache.ts
+│   ├── persistence/
+│   │   ├── DatabaseConnection.ts
+│   │   └── models/
+│   │       ├── ConversationModel.ts
+│   │       ├── MessageModel.ts
+│   │       └── UserModel.ts
+│   ├── repositories/
+│   │   ├── ConversationRepository.ts
+│   │   ├── MessageRepository.ts
+│   │   ├── PresenceRepository.ts
+│   │   ├── UserRepository.ts
+│   │   └── UserSessionRepository.ts
+│   └── webSockets/
+│       └── WebSocketServer.ts
+├── presentation/
+│   ├── controllers/
+│   │   ├── ConversationController.ts
+│   │   ├── MessageController.ts
+│   │   ├── NotificationController.ts
+│   │   ├── UserController.ts
+│   │   └── WebSocketController.ts
+│   └── routes/
+│       ├── conversationRoutes.ts
+│       ├── messageRoutes.ts
+│       ├── notificationRoutes.ts
+│       ├── userRoutes.ts
+│       └── webSocketRoutes.ts
+└── index.ts
+```
